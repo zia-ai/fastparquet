@@ -15,7 +15,7 @@ def read_thrift(file_obj, ttype):
 
     # set up the protocol chain
     ft = TFileObjectTransport(file_obj)
-    bufsize = 2 ** 16
+    bufsize = 2 ** 20
     # for accelerated reading ensure that we wrap this so that the CReadable transport can be used.
     bt = TBufferedTransport(ft, bufsize)
     pin = TCompactProtocol(bt)
